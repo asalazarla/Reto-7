@@ -61,15 +61,6 @@ while i <= 100:
 
 * A continuación su respectivo **diagrama de flujo** :
 ```mermaid
-graph TD;
-    A(Inicio) --> B(Inicialización de i en 1);
-    B --> C{Verificación: i <= 100};
-    C -- No --> D[Fin];
-    C -- Sí --> E[Calcular cuadrado de i];
-    E --> F[Imprimir 'El cuadrado de i es cuadrado'];
-    F --> G[Incrementar i en 1];
-    G --> C;
-
 ```
 2. Imprimir un listado con los números impares desde 1 hasta 999 y seguidamente otro listado con los números pares desde 2 hasta 1000.
    
@@ -122,20 +113,6 @@ else:
 
 * A continuación su respectivo **diagrama de flujo** :
 ```mermaid
-graph TD;
-    A[Inicio] --> B[Solicitar ingreso de número natural n >= 2];
-    B --> C{¿n < 2?}
-    C -- Sí --> D[Imprimir "El número ingresado debe ser mayor o igual a 2."]
-    C -- No --> E{¿n es impar?}
-    E -- Sí --> F[Restar 1 a n]
-    E -- No --> G[Continuar con n]
-    F --> H
-    G --> H[Ciclo while n >= 2]
-    H --> I{¿n >= 2?}
-    I -- No --> J[Fin]
-    I -- Sí --> K[Imprimir n]
-    K --> L[Restar 2 a n]
-    L --> I
 ```
 
 4. En 2022 el país A tendrá una población de 25 millones de habitantes y el país B de 18.9 millones. Las tasas de crecimiento anual de la población serán de 2% y 3% respectivamente. Desarrollar un algoritmo para informar en que año la población del país B superará a la de A.
