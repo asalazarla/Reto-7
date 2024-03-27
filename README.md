@@ -61,6 +61,14 @@ while i <= 100:
 
 * A continuación su respectivo **diagrama de flujo** :
 ```mermaid
+graph TD
+    A[Inicio] --> B[Inicialización: i = 1]
+    B --> C{¿i <= 100?}
+    C -- Sí --> D[Calcula cuadrado: cuadrado = i ** 2]
+    D --> E[Imprime 'El cuadrado de i es cuadrado']
+    E --> F[Incrementa i: i += 1]
+    F --> C
+    C -- No --> G[Fin]
 ```
 2. Imprimir un listado con los números impares desde 1 hasta 999 y seguidamente otro listado con los números pares desde 2 hasta 1000.
    
@@ -86,7 +94,19 @@ else:
 
 * A continuación su respectivo **diagrama de flujo** :
 ```mermaid
-
+graph TD
+    A[Solicitud de n] --> B{¿n >= 2?}
+    B -- Sí --> C{¿n impar?}
+    C -- Sí --> D[Resta 1 a n]
+    C -- No --> E[Inicia ciclo]
+    D --> E
+    E --> F{¿n >= 2?}
+    F -- Sí --> G[Imprime n]
+    G --> H[Resta 2 a n]
+    H --> F
+    F -- No --> I[Fin]
+    B -- No --> J[Imprime 'El número no es >= 2']
+    J --> I
 ```
 
 3. Imprimir los números pares en forma descendente hasta 2 que son menores o iguales a un número natural n ≥ 2 dado
@@ -113,6 +133,19 @@ else:
 
 * A continuación su respectivo **diagrama de flujo** :
 ```mermaid
+graph TD
+    A[Solicitud de n] --> B{¿n < 2?}
+    B -- Sí --> C[Imprime 'El número ingresado debe ser mayor o igual a 2.']
+    B -- No --> D{¿n impar?}
+    D -- Sí --> E[Resta 1 a n]
+    D -- No --> F[Continúa]
+    E --> G[Inicia ciclo while n >= 2]
+    F --> G
+    G --> H{¿n >= 2?}
+    H -- Sí --> I[Imprime n]
+    I --> J[Resta 2 a n]
+    J --> H
+    H -- No --> K[Fin]
 ```
 
 4. En 2022 el país A tendrá una población de 25 millones de habitantes y el país B de 18.9 millones. Las tasas de crecimiento anual de la población serán de 2% y 3% respectivamente. Desarrollar un algoritmo para informar en que año la población del país B superará a la de A.
